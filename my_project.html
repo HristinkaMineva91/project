@@ -4,8 +4,14 @@
         <title>
             My Web Page!
         </title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <h1 style="color:#f540e9;text-align:center;">
+            Welcome to My Web Page!
+        </h1>
+        <p>Hello world!</p>
+        <p>This is another paragraph!</p>
         An Unordered List:
         <ul>
             <li>One item!</li>
@@ -18,7 +24,7 @@
             <li>Second item!</li>
             <li>Third item!</li>
         </ol>
-        <img src="samoyed.jpg" height="340" width="450"/>
+        <img src="Samoyed.jpg" height="340" width="450"/>
         <h1>
             Presidents
         </h1>
@@ -26,7 +32,7 @@
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Years in Offixe</th>
+                <th>Years in Office</th>
             </tr>
             <tr>
                 <td>George</td>
@@ -45,8 +51,22 @@
             </tr>
         </table>
         <form>
-            <input type="text" placeholder="Full Name" name="name">
-            <button>Submit !</button>
+            <input id="Full Name" type="text" placeholder="Full Name" name="name">
+            <button onclick="bla()">Submit !</button>
         </form>
+        <script>
+            function bla() {
+                alert("Hi, " + document.getElementById("Full Name").value + "!");
+            }
+        </script>
+        <div id="top">
+            This is a <span class="name">top</span> of my web page.
+        </div>
+        <div id="middle">
+            This is a <span class="name">middle</span> of my web page.
+        </div>
+        <div id="bottom">
+            This is a <span class="name">bottom</span> of my web page.
+        </div>
     </body>
 </html>
