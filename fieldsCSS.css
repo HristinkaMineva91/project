@@ -1,0 +1,7 @@
+#colorBox {
+    height: 28px;
+    width: 28px;
+    border: 1px solid black; 
+    border-radius: 10px;
+    margin-top: 10px;
+}
