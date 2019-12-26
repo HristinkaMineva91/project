@@ -4,10 +4,10 @@
         <title>
             My Web Page!
         </title>
-        <link rel="stylesheet" href="fieldsCSS.css">
+        <link rel="stylesheet" href="css/fieldsCSS.css">
     </head>
     <body>
-        <form>
+        <!--<form>
             <div>
                 <input name="name" type="text" placeholder="Name">
                 <input name="password" type="password" placeholder="Password">
@@ -37,30 +37,75 @@
                 </datalist>
                 <div id="colorBox"></div>
             </div>
-        </form>
-        <script>function changeColor() {
-            let option = document.getElementById("color").value
-            console.log(option)
-            let color
-            switch(option) {
-                case "Pink":
-                    color = "pink"
-                    break;
-                case "Gray":
-                    color = "gray"
-                    break;
-                case "Blue":
-                    color = "blue"
-                    break;
-                case "Red":
-                    color = "red"
-                    break;
-                case "Black":
-                    color = "black"
-                    break;
+        </form>-->
+        <div>
+            <input oninput="changePicture()" id="picture" name="picture" list="dogs" placeholder="Dogs">
+            <datalist id="dogs">
+                <option>Samoyed</option>
+                <option>Huskey</option>
+                <option>Akita Inu</option>
+                <option>Corgi</option>
+                <option>Chau-chau</option>
+            </datalist>
+            <div id="pictureBox"></div>
+        </div>
+        <script>
+            function changeColor() {
+                let option = document.getElementById("color").value
+                console.log(option)
+                let color
+                switch(option) {
+                    case "Pink":
+                        color = "pink"
+                        break;
+                    case "Gray":
+                        color = "gray"
+                        break;
+                    case "Blue":
+                        color = "blue"
+                        break;
+                    case "Red":
+                        color = "red"
+                        break;
+                    case "Black":
+                        color = "black"
+                        break;
+                }
+                document.getElementById("colorBox").style.backgroundColor = color
             }
-            document.getElementById("colorBox").style.backgroundColor = color
-        }
+            function changePicture() {
+                let option = document.getElementById("picture").value
+                console.log(option)
+                let dog
+                switch(option) {
+                    case "Samoyed":
+                        dog = "resources/Samoyed.jpg"
+                        break;
+                    case "Huskey":
+                        dog = "resources/huskey.jpg"
+                        break;
+                    case "Akita Inu":
+                        dog = "resources/akita-inu.jpg"
+                        break;
+                    case "Corgi":
+                        dog = "resources/corgi.jpg"
+                        break;
+                    case "Chau-chau":
+                        dog = "resources/chau-chau.jpg"
+                        break;
+                    default:
+                        break;    
+                }
+                pictureBox = document.getElementById("pictureBox")
+                if(dog != undefined) {
+                    pictureBox.style.backgroundImage = "url('" + dog + "')"
+                    pictureBox.style.backgroundSize = "300px 300px"
+                    pictureBox.style.backgroundRepeat = "no-repeat"
+                    pictureBox.style.backgroundPosition = "center"
+                } else {
+                    pictureBox.style.backgroundImage = "url('resources/no-image.png')"
+                }
+            }
         </script>
     </body>
 </html>
