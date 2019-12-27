@@ -1,0 +1,60 @@
+h1 {
+    color: blueviolet;
+    text-align: center;
+}
+
+p {
+    color: purple;
+}
+
+body {
+    color:black;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input {
+    background-color:gainsboro;
+    width: 100px;
+    height: 20px;
+    margin: 30px;
+}
+
+li {
+    color: rgb(43, 168, 226);
+    size: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+table {
+    border: 2px solid black;
+    text-align: center;
+    width: 50%;
+}
+
+th, td {
+    border: 1px solid black;
+}
+
+th {
+    background-color: lightgray;
+}
+
+#top {
+    font-size: 36px;
+}
+
+#middle {
+    font-size: 24px;
+}
+
+#bottom {
+    font-size: 12px;
+}
+
+.name {
+    font-weight: bold;
+}

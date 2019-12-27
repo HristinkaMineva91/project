@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            My Web Page!
+        </title>
+        <link rel="stylesheet" href="./../static/css/fieldsCSS.css">
+    </head>
+    <body>
+        <form>
+            <div>
+                <input name="name" type="text" placeholder="Name">
+                <input name="password" type="password" placeholder="Password">
+            </div>
+            <div>
+                Favourite color?
+                <input name="color" type="radio" value="red"> Red
+                <input name="color" type="radio" value="green"> Green
+                <input name="color" type="radio" value="blue"> Blue
+                <input name="color" type="radio" value="other"> Other
+            </div>
+            <div>
+                <input name="country" list="countries" placeholder="Country">
+                <datalist id="countries">
+                    <option>Bulgaria</option>
+                    <option>Hungary</option>
+                </datalist>
+            </div>
+            <div>
+                <input oninput="changeColor()" id="color" name="color" list="colors" placeholder="Colors">
+                <datalist id="colors">
+                    <option>Pink</option>
+                    <option>Gray</option>
+                    <option>Blue</option>
+                    <option>Red</option>
+                    <option>Black</option>
+                </datalist>
+                <div id="colorBox"></div>
+            </div>
+        </form>
+        <div>
+            <input oninput="changePicture()" id="picture" name="picture" list="dogs" placeholder="Dogs">
+            <datalist id="dogs">
+                {% for dog in dognames %}
+                    <option>{{ dog }}</option>
+                {% endfor %}
+            </datalist>
+            <div id="pictureBox"></div>
+        </div>
+        <script>
+            function changeColor() {
+                let option = document.getElementById("color").value
+                console.log(option)
+                let color
+                switch(option) {
+                    case "Pink":
+                        color = "pink"
+                        break;
+                    case "Gray":
+                        color = "gray"
+                        break;
+                    case "Blue":
+                        color = "blue"
+                        break;
+                    case "Red":
+                        color = "red"
+                        break;
+                    case "Black":
+                        color = "black"
+                        break;
+                }
+                document.getElementById("colorBox").style.backgroundColor = color
+            }
+            function changePicture() {
+                let option = document.getElementById("picture").value
+                console.log(option)
+                let dog
+                switch(option) {
+                    case "Samoyed":
+                        dog = "./../static/img/Samoyed.jpg"
+                        break;
+                    case "Huskey":
+                        dog = "./../static/img/huskey.jpg"
+                        break;
+                    case "Akita Inu":
+                        dog = "./../static/img/akita-inu.jpg"
+                        break;
+                    case "Corgi":
+                        dog = "./../static/img/corgi.jpg"
+                        break;
+                    case "Chau-chau":
+                        dog = "./../static/img/chau-chau.jpg"
+                        break;
+                    default:
+                        break;    
+                }
+                pictureBox = document.getElementById("pictureBox")
+                if(dog != undefined) {
+                    pictureBox.style.backgroundImage = "url('" + dog + "')"
+                    pictureBox.style.backgroundSize = "300px 300px"
+                    pictureBox.style.backgroundRepeat = "no-repeat"
+                    pictureBox.style.backgroundPosition = "center"
+                } else {
+                    pictureBox.style.backgroundImage = "url('./../static/img/no-image.png')"
+                }
+            }
+        </script>
+        <a href="{{ url_for('more') }}">See more...</a>
+    </body>
+</html>
