@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            My Web Page!
+        </title>
+    </head>
+    <body>
+        <h1>{% block heading %}{% endblock %}</h1>
+        <h2>Welcome!</h2>
+
+        {% block body %}
+        {% endblock %}
+
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+        </ul>
+        <h2 id="section1">Section 1</h2>
+        <p>Domestic dogs have been selectively bred for millennia for various behaviors, sensory capabilities, 
+        and physical attributes.[17] Modern dog breeds show more variation in size, appearance, and behavior than 
+        any other domestic animal.[17] Dogs are predators and scavengers, and like many other predatory mammals,
+        the dog has powerful muscles, fused wrist bones, a cardiovascular system that supports both sprinting and 
+        endurance, and teeth for catching and tearing.</p>
+        <h2 id="section2">Section 2</h2>
+        <p>Dogs are highly variable in height and weight. The smallest known adult dog was a Yorkshire Terrier, 
+        that stood only 6.3 cm (2.5 in) at the shoulder, 9.5 cm (3.7 in) in length along the head-and-body, and
+        weighed only 113 grams (4.0 oz). The largest known dog was an English Mastiff which weighed 155.6 kg (343 lb)
+        and was 250 cm (98 in) from the snout to the tail.[31] The tallest dog is a Great Dane that stands 106.7 cm 
+        (42.0 in) at the shoulder.[32]</p>
+        <h2 id="section3">Section 3</h2>
+        <p>The dog's senses include vision, hearing, sense of smell, sense of taste, touch and sensitivity to the 
+        earth's magnetic field. Another study suggested that dogs can see the earth's magnetic field.[33][34][35]</p>
+    </body>
+</html>

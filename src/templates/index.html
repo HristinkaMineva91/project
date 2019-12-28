@@ -1,0 +1,14 @@
+{% extends "links.html" %}
+
+{% block heading %}
+    First Page
+{% endblock %}
+
+{% block body %}
+    <form action="{{ url_for('hello') }}" method="post">
+        <input type="text" name="name" placehoder="Enter your name">
+        <button>Submit</button>
+    </form>
+{% endblock %}    
+
+    
